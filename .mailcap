@@ -1,0 +1,15 @@
+#
+# The mailcap file is read by the metamail program to determine how to display
+# non-text at the local site. For more information check: man mailcap
+#
+# You must execute 'sudo update-mime' after you change this file to activate!
+#
+
+# Display images
+image/png; ristretto %s; test=test -n "$DISPLAY"
+image/gif; ristretto %s; test=test -n "$DISPLAY"
+image/jpeg; ristretto %s; test=test -n "$DISPLAY"
+image/bmp; ristretto %s; test=test -n "$DISPLAY"
+image/x-pixmap; ristretto %s; test=test -n "$DISPLAY"
+image/tiff; ristretto %s; test=test -n "$DISPLAY"
+image/svg+xml; ristretto %s; test=test -n "$DISPLAY"

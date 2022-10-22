@@ -1,0 +1,30 @@
+# vim: filetype=muttrc
+#
+# ~/.muttrc
+#
+
+# Color and UI settings
+source ~/.mutt/muttrc_colors
+source ~/.mutt/muttrc_custom
+
+# IMAP account
+set imap_user = "username@domain.com"
+set imap_pass = ""
+
+set smtp_url = "smtps://username@domain.com@mail.domain.com:465/"
+set smtp_pass = ""
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+set from = "username@domain.com"
+set realname = "My Name"
+
+set folder    = "imaps://mail.domain.com:993"
+set spoolfile = "imaps://mail.domain.com:993/INBOX"
+set record    = "=INBOX.Sent"
+set postponed = "=INBOX.Draft"
+
+set mail_check_stats=yes
+set mail_check_stats_interval=60
+
+mailboxes +INBOX

@@ -1,0 +1,113 @@
+# vim: filetype=muttrc
+#
+# ~/.mutt/muttrc_colors
+#
+# Include this from ~/.muttrc with 'source' for example:
+# source ~/.mutt/muttrc_colors
+#
+# For more colors let's check: https://robotmoon.com/256-colors/
+
+# basic colors
+color normal      white     color250
+color error       white     color203
+color tilde       white     color250
+color message     black     color239
+color markers     white     color250
+color attachment  color4    color250
+color search      white     color191
+color status      black     color235
+color indicator   black			color239
+color tree        color9    color250
+
+# index
+color index  color55  color250  "~Q"   # messages that have been replied to
+color index  white    color79   "~O"   # old messages
+color index  white    color41   "~N"   # messages in threads with some unread or new
+color index  white    color214  "~F"   # flagged
+color index  white    color203  "~D"   # deleted
+
+#color index  color166  color234  ~=                         # duplicate messages
+#color index  color240  color234  "~A!~N!~T!~p!~Q!~F!~D!~P"  # the rest
+#color index  J_base    color234  "~A~N!~T!~p!~Q!~F!~D"      # the rest, new
+#color index  color160  color234  "~A"                       # all messages
+#color index  color166  color234  "~E"                       # expired messages
+#color index  color015  color027  "~N"                       # new messages
+#color index  color246  color234  "~R"                       # read messages
+#color index  color015  color027  "~U"                       # unread messages
+#color index  color015  color027  "~U~$"                     # unread, unreferenced messages
+#color index  color241  color234  "~v"                       # messages part of a collapsed thread
+#color index  color241  color234  "~P"                       # messages from me
+#color index  color37   color234  "~p!~F"                    # messages to me
+#color index  color015  color027  "~N~p!~F"                  # new messages to me
+#color index  color015  color027  "~U~p!~F"                  # unread messages to me
+#color index  color246  color234  "~R~p!~F"                  # messages to me
+#color index  color160  color235  "~F"                       # flagged messages
+#color index  color160  color235  "~F~p"                     # flagged messages to me
+#color index  color160  color017  "~N~F"                     # new flagged messages
+#color index  color160  color017  "~N~F~p"                   # new flagged messages to me
+#color index  color160  color017  "~U~F~p"                   # new flagged messages to me
+#color index  black     color203  "~D"                       # deleted messages
+#color index  color245  color234  "~v~(!~N)"                 # collapsed thread with no unread
+#color index  color136  color234  "~v~(~N)"                  # collapsed thread with some unread
+#color index  color64   color234  "~N~v~(~N)"                # collapsed thread with unread parent
+
+# message headers
+color hdrdefault  white     color247
+color header      color240  color247  "^(Reply-To|Mail-Followup-To|Organization|Newsgroups|BCC|Message-ID|X-Mailer|User-Agent|X-Junked-Because|X-SpamProbe|X-Virus-hagbard|X-Original-To)"
+
+# body
+color quoted   white   color248
+color quoted1  white   color247
+color quoted2  white   color246
+color quoted3  white   color245
+color quoted4  white   color244
+#color signature     color240        color234
+#color bold          color235        color234
+#color underline     color235        color234
+#color normal        color244        color234
+#color body          color245        color234        "[;:][-o][)/(|]"    # emoticons
+#color body          color245        color234        "[;:][)(|]"         # emoticons
+
+# pgp
+#color body          color160        color234        "(BAD signature)"
+#color body          color37         color234        "(Good signature)"
+#color body          color234        color234        "^gpg: Good signature .*"
+#color body          color241        color234        "^gpg: "
+#color body          color241        color160        "^gpg: BAD signature from.*"
+#mono  body          bold                            "^gpg: Good signature"
+#mono  body          bold                            "^gpg: BAD signature from.*"
+
+# Border lines.
+color body  color4  color250  "( *[-+=#*~_━]){6,}"
+
+# mono screen
+#mono  bold      bold
+#mono  underline underline
+#mono  indicator reverse
+#mono  error     bold
+mono  index bold  ~N
+mono  index bold  ~F
+mono  index bold  ~T
+mono  index bold  ~D
+
+# Highlights inside the body of a message.
+
+# URLs
+color body color4  color250 "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+color body color4  color250 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body color4  color250 "news:[^ \">\t\r\n]*"
+mono  body bold              "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+mono  body bold              "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+mono  body bold              "news:[^ \">\t\r\n]*"
+
+# email addresses
+color body color4  color250  "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+mono  body bold              "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+
+# Various smilies and the like
+color body color4  color250  "<[Gg]>"                                            # <g>
+color body color4  color250  "<[Bb][Gg]>"                                        # <bg>
+color body color4  color250  " [;:]-*[)>(<|]"                                    # :-) etc...
+color body color4  color250  "(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$)" # *Bold* text.
+color body color4  color250  "(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)"     # _Underlined_ text.
+color body color4  color250  "(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)"     # /Italic/ text.

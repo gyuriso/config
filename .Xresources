@@ -1,0 +1,64 @@
+!
+! cp -v .Xresources ~/.Xresources && xrdb -remove && xrdb -load ~/.Xresources && xterm
+!
+! For more colors: https://www.color-hex.com/color-names.html
+!
+
+*customization:
+xterm*reverseVideo: false
+
+xterm*faceName: Monospace:size=16:antialias=true
+xterm*allowBoldFonts: true
+xterm*termName: xterm-256color
+xterm*scaleHeight: 1.01
+xterm*eightBitInput: false
+xterm*loginShell: true
+xterm*saveLines: 4000
+xterm*scrollBar: false
+xterm*selectToClipboard: true
+xterm*BorderWidth: 2
+xterm*boldMode: true
+xterm*colorBDMode: true
+xterm*colorBD: #c41e3a
+xterm*colorUL: #ffa700
+xterm*locale: false
+xterm*utf8: true
+XTerm*cursorColor: SeaGreen4
+XTerm*cursorBlink: true
+
+! Only select text
+xterm*highlightSelection: true
+! Remove trailing spaces
+xterm*trimSelection: true
+
+! double-click to select whole URLs :D
+! https://scarygliders.net/2011/12/01/customize-xterm-the-original-and-best-terminal/
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+*background: white
+*foreground: black
+
+! Black
+*color0: gray
+*color8: gray3
+! Red
+*color1: #ae2029
+*color9: #ae2029
+! Green
+*color2: SeaGreen4
+*color10: green4
+! Brown/Yellow
+*color3: #ffa700
+*color11: yellow4
+! Blue
+*color4: RoyalBlue4
+*color12: NavyBlue
+! Magenta
+*color5: magenta3
+*color13: magenta
+! Cyan
+*color6: Cyan4
+*color14: LightCyan4
+! White
+*color7: gray3
+*color15: white

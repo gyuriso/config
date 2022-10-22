@@ -1,0 +1,13 @@
+# vim: filetype=muttrc
+#
+# ~/.mutt/muttrc_aliases
+#
+
+# This example will colorize new mails from 'domaina.com' and 'domainb.org':
+# color index color239 color250 "~h \"^From: .*(domaina\.com|domainb\.org).*\" !~N"
+
+# Mutt will append new aliases at the end of this file when you hit key 'a',
+# or you can do it manually as well. Here is an example:
+#
+# alias test_user Test User <test_user@domain.com>
+#

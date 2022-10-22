@@ -1,0 +1,95 @@
+# vim: filetype=muttrc
+#
+# ~/.mutt/muttrc_custom
+#
+# Include this from ~/.muttrc with 'source' for example:
+# source ~/.mutt/muttrc_custom
+
+# Keybindings
+bind pager j next-line
+bind pager k previous-line
+bind generic <home>  first-entry
+bind generic <end>   last-entry
+bind generic <left>  previous-entry
+bind generic <right> next-entry
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+
+# Message index display
+set index_format=" %Z │ %{%b %d %H:%M} ⃒⃒⃒│ %-25.40L ➤ %s"
+
+# Controls the format of the status line displayed in the “index” menu.
+set status_format="%r %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?B? Back:%B?%?l? %l?]   (%s/%S) %> [%P]"
+
+# menus will be scrolled up or down one line when you attempt to move across a
+# screen  boundary
+set menu_scroll=yes
+
+# number of lines of context that are given when scrolling through menus
+set menu_context=3
+
+# auto convert text/html MIME type to text/plain --> w3m is required
+auto_view text/html
+
+# Don't switch to next mail when paging down in a mail and hitting bottom
+set pager_stop=yes
+
+# sort_aux, it controls not just the order of messages within each
+# thread, but also the order of threads themselves
+set sort_aux=last-date-received
+
+# Controls  whether  or not Mutt will move read messages from your spool
+# mailbox to your $mbox mailbox, or as a result of a “mbox-hook” command
+set move=no
+
+# Local caching folders
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+# Save and read aliases from dedicated file
+set alias_file=~/.mutt/muttrc_aliases
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
+# Don't want any wrap markers.
+set nomarkers
+
+# The “status bar” to be displayed on the first line of the screen
+set status_on_top=yes
+
+# Configure header displays.
+# Ignore all headers
+ignore *
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Mail-Followup-To:
+unignore Date:
+unignore Organization:
+unignore Newsgroups:
+unignore CC:
+unignore BCC:
+unignore Message-ID:
+unignore X-Mailer:
+unignore User-Agent:
+unignore X-Junked-Because:
+unignore X-SpamProbe:
+unignore X-Virus-hagbard:
+unignore X-Original-To:
+unignore Subject:
+
+# internal-pager will pad blank lines to the bottom of the screen with a tilde
+set tilde
+
+# mutt to display it's version on startup.
+push V
+
+# Specifies the filename of your signature, which is appended to all outgoing
+# messages. If the filename ends with a pipe (“|”), it is assumed that filename
+# is a shell command and input should be read from its standard output
+# Install fortune on your system: sudo apt install fortune
+# set signature="fortune -s|"
+
+# automatic text wrapping is enabled
+set editor='vim + -c "set nopaste textwidth=80 fo+=t wrap"'
