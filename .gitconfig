@@ -31,7 +31,11 @@
 
 [alias]
 
+  a  = add
+  c  = checkout
   co = checkout
+  d  = diff
+  s  = status
 
   # Get the current branch name (not so useful in itself, but used in# other aliases)
   branch-name = "!git rev-parse --abbrev-ref HEAD"
