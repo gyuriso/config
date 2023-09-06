@@ -23,6 +23,9 @@
 
 [pager]
 	branch = false
+	log = less -X
+	show = less -X
+	diff = less -X
 
 [diff]
 	tool = meld
@@ -33,33 +36,36 @@
 [alias]
 	a  = add
 	c  = checkout
+	co = checkout
 	d  = diff
 	s  = status
 	b  = branch
 
-	# Get the current branch name (not so useful in itself, but used in# other aliases)
-	branch-name = "!git rev-parse --abbrev-ref HEAD"
+  # reset/diff/rebase against the upstream remote
+	ushow = show HEAD..@{u}
+	ulog = log HEAD..@{u}
+	udiff = diff @{u}
+	ureset = reset @{u}
+	urebase = rebase @{u}
 
-	# fetch from server and show changes compare to your local branch
-	fdiff=!git fetch && git diff HEAD..@{u}
-	flog=!git fetch && git log HEAD..@{u}
+	# current branch name
+	branch-name = branch --show-current
 
 	# List commits in short form, with colors and branch/tag annotations
-	ls = !git log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s%C(yellow) [%cn]' \
+	ls = log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s%C(yellow) [%cn]' \
 		--decorate
 
 	# List commits showing changed files is invoked with git ll and looks like this
-	ll = !git log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s%C(yellow) [%cn]' \
+	ll = log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s%C(yellow) [%cn]' \
 				--decorate --numstat
 
 	# Another list
-	l = !git log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s%C(yellow) [%cn] %C(blue)%cr' \
+	l = log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s%C(yellow) [%cn] %C(blue)%cr' \
 				--graph --decorate --all
 
 	# You can see all the commits related to a file, with the diff of the changes
 	# Use it from the root folder of your repo.
-	filetrace = !git log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s [%cn]' \
-				--graph --decorate --all --follow -p --
+	ftrace = log --pretty=format:'%C(yellow)%h%C(green)%d %Creset%s [%cn]' --all --follow -p --
 
 	# Finding files and content inside the repo (grep)
 	f = "!git ls-files | grep -i"

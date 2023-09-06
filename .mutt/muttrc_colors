@@ -9,7 +9,7 @@
 
 # basic colors
 color normal      white     color250
-color error       white     color203
+color error       white     color204
 color tilde       white     color250
 color message     black     color239
 color markers     white     color250
@@ -24,7 +24,7 @@ color index  color55  color250  "~Q"   # messages that have been replied to
 color index  white    color79   "~O"   # old messages
 color index  white    color41   "~N"   # messages in threads with some unread or new
 color index  white    color214  "~F"   # flagged
-color index  white    color203  "~D"   # deleted
+color index  white    color204  "~D"   # deleted
 
 #color index  color166  color234  ~=                         # duplicate messages
 #color index  color240  color234  "~A!~N!~T!~p!~Q!~F!~D!~P"  # the rest
