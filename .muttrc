@@ -4,8 +4,8 @@
 #
 
 # Color and UI settings
-source ~/.mutt/muttrc_colors
 source ~/.mutt/muttrc_custom
+source ~/.mutt/muttrc_colors
 
 # IMAP account
 set imap_user = "username@domain.com"
@@ -23,15 +23,16 @@ set folder    = "imaps://mail.domain.com:993"
 set spoolfile = "imaps://mail.domain.com:993/INBOX"
 set record    = "=INBOX.Sent"
 set postponed = "=INBOX.Draft"
+set trash     = "=Trash"
+
+set header_cache=~/.mutt/headercache
+set message_cachedir=~/.mutt/messagecache
+set message_cache_clean=yes
 
 set mail_check_stats=yes
 set mail_check_stats_interval=60
 
 mailboxes +INBOX
 
-# "G" key for "Get New Mails" from IMAP
-bind index G imap-fetch-mail
-
 # Controls whether mutt tries to set the terminal status line and icon name.
 set ts_enabled=yes
-
