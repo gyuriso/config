@@ -36,3 +36,7 @@ mailboxes +INBOX
 
 # Controls whether mutt tries to set the terminal status line and icon name.
 set ts_enabled=yes
+
+# How often (in seconds) mutt should look for new mail
+set mail_check=60
+set timeout=10
