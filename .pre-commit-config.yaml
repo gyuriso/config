@@ -25,8 +25,8 @@ repos:
   - id: end-of-file-fixer # Makes sure files end in a newline and only a newline.
   - id: mixed-line-ending # Fix EOL character to Linux
     args: ['--fix','lf']
-  #- id: no-commit-to-branch
-  #  args: ['--branch', 'main']
+  - id: no-commit-to-branch
+    args: ['--branch', 'main']
   - id: pretty-format-json
   - id: trailing-whitespace # Remove white space(s) from EOL
 - repo: local
